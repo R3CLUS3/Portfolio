@@ -1,6 +1,160 @@
 <!DOCTYPE html>
 <html lang="fr">
-
-
-
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Portfolio – Cybersécurité</title>
+  <meta name="description" content="Portfolio d'un·e professionnel·le en cybersécurité : projets, compétences, certifications.">
+ 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script>
+    // Applique le thème sauvegardé avant l'affichage (évite le flash blanc)
+    try { var t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
+</head>
+<body>
+ 
+  <!-- ========== BARRE LATÉRALE ========== -->
+  <aside class="side" id="side">
+    <div class="profile">
+      <div class="avatar" aria-hidden="true">PN</div>
+      <div>
+        <p class="brand">Prénom Nom</p>
+        <p class="status"><span class="dot"></span>Disponible</p>
+      </div>
+    </div>
+ 
+    <nav aria-label="Menu principal">
+      <ul>
+        <li><a href="#accueil" class="active">Accueil</a></li>
+        <li><a href="#apropos">À propos</a></li>
+        <li><a href="#competences">Compétences</a></li>
+        <li>
+          <details>
+            <summary>Projets</summary>
+            <ul class="sub">
+              <li><a href="#p1">Laboratoire SOC</a></li>
+              <li><a href="#p2">Test d'intrusion web</a></li>
+              <li><a href="#p3">Durcissement Linux</a></li>
+            </ul>
+          </details>
+        </li>
+        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+ 
+    <button class="theme" id="theme" type="button" aria-label="Changer de thème">
+      <span id="themeLabel">Thème sombre</span>
+      <span id="themeIcon" aria-hidden="true">☾</span>
+    </button>
+  </aside>
+  <div class="scrim" id="scrim"></div>
+ 
+  <!-- ========== CONTENU ========== -->
+  <main>
+    <header class="top">
+      <button id="burger" type="button" aria-controls="side" aria-expanded="false">Menu</button>
+      <strong>Prénom Nom</strong>
+    </header>
+ 
+    <section id="accueil" class="hero">
+      <h1>Je cherche les failles avant que d'autres ne les trouvent.</h1>
+      <p class="lead">Professionnel·le en cybersécurité, orienté·e sécurité offensive et détection d'incidents.</p>
+ 
+      <div class="term" aria-hidden="true">
+        <div class="term-bar"><i></i><i></i><i></i></div>
+        <div class="term-body">
+          <div><span class="prompt">$</span> whoami</div>
+          <div>prenom.nom — analyste sécurité</div>
+          <div><span class="prompt">$</span> cat focus.txt</div>
+          <div>pentest · blue team · forensic · hardening</div>
+          <div><span class="prompt">$</span> <span class="cursor"></span></div>
+        </div>
+      </div>
+ 
+      <div class="btns">
+        <a class="btn" href="#projets">Voir mes projets</a>
+        <a class="btn ghost" href="#contact">Me contacter</a>
+      </div>
+    </section>
+ 
+    <section id="apropos">
+      <h2>À propos</h2>
+      <p>Présente-toi ici en quelques phrases : ton parcours, ce qui t'a conduit vers la cybersécurité et le type de missions ou de poste que tu recherches.</p>
+      <p>Ajoute ce qui te distingue : CTF, veille technique, contributions open source, laboratoire personnel.</p>
+    </section>
+ 
+    <section id="competences">
+      <h2>Compétences</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Sécurité offensive</h3>
+          <ul class="tags"><li>Pentest web</li><li>Burp Suite</li><li>Metasploit</li><li>Nmap</li><li>OWASP Top 10</li></ul>
+        </div>
+        <div class="card">
+          <h3>Sécurité défensive</h3>
+          <ul class="tags"><li>SIEM</li><li>Splunk / ELK</li><li>Analyse de logs</li><li>Wireshark</li><li>Réponse à incident</li></ul>
+        </div>
+        <div class="card">
+          <h3>Systèmes et réseaux</h3>
+          <ul class="tags"><li>Linux</li><li>Windows Server / AD</li><li>TCP/IP</li><li>Pare-feu</li><li>VPN</li></ul>
+        </div>
+        <div class="card">
+          <h3>Développement</h3>
+          <ul class="tags"><li>Python</li><li>Bash</li><li>PHP</li><li>SQL</li></ul>
+        </div>
+      </div>
+    </section>
+ 
+    <section id="projets">
+      <h2>Projets</h2>
+      <div class="grid">
+        <article class="card project" id="p1">
+          <h3>Laboratoire SOC</h3>
+          <p>Mise en place d'un SIEM avec collecte de logs, règles de détection et tableaux de bord sur un réseau virtualisé.</p>
+          <ul class="tags"><li>Splunk</li><li>Sysmon</li><li>VirtualBox</li></ul>
+        </article>
+        <article class="card project" id="p2">
+          <h3>Test d'intrusion web</h3>
+          <p>Audit d'une application volontairement vulnérable : injection SQL, XSS, contrôle d'accès, avec rapport et recommandations.</p>
+          <ul class="tags"><li>Burp Suite</li><li>DVWA</li><li>Rapport</li></ul>
+        </article>
+        <article class="card project" id="p3">
+          <h3>Durcissement Linux</h3>
+          <p>Script d'audit et de durcissement d'un serveur selon les recommandations CIS : SSH, pare-feu, journalisation.</p>
+          <ul class="tags"><li>Bash</li><li>CIS</li><li>Ansible</li></ul>
+        </article>
+      </div>
+    </section>
+ 
+    <section id="certifications">
+      <h2>Certifications et formation</h2>
+      <ol class="timeline">
+        <li><time>2025</time><h3>Nom de la certification</h3><p>Organisme</p></li>
+        <li><time>2024</time><h3>Nom du diplôme</h3><p>École / Université</p></li>
+        <li><time>En cours</time><h3>Plateforme CTF</h3><p>Classement, salles terminées</p></li>
+      </ol>
+    </section>
+ 
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Une opportunité, une question, un projet ? Écris-moi.</p>
+      <p class="mail"><a href="mailto:ton@email.com">ton@email.com</a></p>
+      <p class="links">
+        <a href="https://github.com/" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/" rel="noopener">LinkedIn</a>
+        <a href="https://tryhackme.com/" rel="noopener">TryHackMe</a>
+      </p>
+    </section>
+ 
+    <footer>© <span id="year"></span> Prénom Nom</footer>
+  </main>
+ 
+  <script src="script.js"></script>
+</body>
 </html>
+ 
