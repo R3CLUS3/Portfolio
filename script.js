@@ -30,6 +30,7 @@
     paintThemeButton();
   });
   paintThemeButton();
+
  
   /* ---------- 2. Menu mobile ---------- */
   const burger = $('burger');
